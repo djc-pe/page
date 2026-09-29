@@ -1,11 +1,18 @@
+/* =========================================
+   Header + barra de navegación
+   ========================================= */
+
 /* El header es el que se desplaza al hacer scroll (script.js), por eso es
-   fixed y no sticky. El body compensa con padding-top: var(--header-h). */
+   fixed y no sticky. El body compensa con padding-top: var(--header-h).
+   El fondo y el borde viven aquí, no en .navbar, para que la barra cruce
+   todo el ancho en pantallas anchas. */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s var(--ease);
   z-index: 1000;
@@ -16,39 +23,57 @@
   transform: translateY(-100%);
 }
 
-/* Nav dentro del header */
+/* Contenedor interior: centrado, pero flexible para no desbordar. */
 .navbar {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+  width: 100%;
   max-width: var(--container);
+  height: var(--header-h, 68px);
   margin-inline: auto;
   padding: 0 var(--gutter);
-
-  background: var(--color-primary);
-  color: var(--color-text-inverse);
-  height: var(--header-h, 68px);
-
-  border-bottom: 1px solid var(--color-border);
   box-sizing: border-box;
+  color: var(--color-text-inverse);
+}
+
+/* --- Zona izquierda: menú + logo --- */
+
+.navbar__a {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 10px;
+}
+
+/* --- Zona central: links + buscador --- */
+
+.navbar__b {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  gap: 14px;
+  min-width: 0; /* permite que los hijos encojan en vez de desbordar */
+  margin-left: auto;
 }
 
 .navbar__links {
   display: flex;
   align-items: center;
-  gap: 6px;
+  flex: 0 0 auto;
+  gap: 2px;
 }
 
 .navbar__links a {
   display: inline-flex;
   align-items: center;
-  padding: 8px 14px;
+  padding: 8px 12px;
   border-radius: var(--radius-pill);
   color: var(--color-text-muted);
-  font-size: 0.93rem;
+  font-size: 0.92rem;
   font-weight: 500;
   text-decoration: none;
+  white-space: nowrap;
   transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
 }
 
@@ -58,20 +83,14 @@
   background: var(--color-accent-soft);
 }
 
-/* Grid interno */
-.navbar__a { 
-  justify-self: start;  
-}
-
-.navbar__b { 
-  justify-self: center; 
-}
+/* --- Buscador --- */
 
 .navbar__b--search {
   display: flex;
-  width: 100%;
-  max-width: 420px;
-  justify-self: center;
+  flex: 1 1 200px;
+  min-width: 0;
+  max-width: 320px;
+  margin-left: auto;
   background: var(--color-surface);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-pill);
@@ -84,12 +103,13 @@
 }
 
 .navbar__b--search input {
+  flex: 1 1 auto;
+  min-width: 0; /* sin esto el input no encoja y empuja al botón */
   background: transparent;
   color: var(--color-text);
-  flex: 1; /* ocupa todo el espacio */
   border: none;
-  padding: 9px 18px;
-  font-size: 0.95rem;
+  padding: 9px 16px;
+  font-size: 0.92rem;
   font-family: inherit;
   outline: none;
 }
@@ -99,15 +119,15 @@
 }
 
 .navbar__b--search button {
-  background: transparent;
-  color: var(--color-accent);
-  border: none;
-  padding: 0 16px;
-  cursor: pointer;
-  font-size: 1.05rem;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
+  color: var(--color-accent);
+  border: none;
+  padding: 0 14px;
+  cursor: pointer;
   transition: background var(--dur) var(--ease);
 }
 
@@ -115,20 +135,21 @@
   background: var(--color-accent-soft);
 }
 
-.navbar__c { 
-  justify-self: end; 
-}
+/* --- Zona derecha: CTA + cuenta --- */
 
-.navbar__a,
 .navbar__c {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  flex: 0 0 auto;
+  gap: 10px;
 }
+
+/* --- Links con ícono (menú, logo, cuenta) --- */
 
 .navbar__link {
   display: flex;
   align-items: center;
+  flex: 0 0 auto;
   padding: 6px;
   border-radius: var(--radius-sm);
   text-decoration: none;
@@ -141,62 +162,69 @@
   background: var(--color-accent-soft);
 }
 
-/* Iconos */
+/* --- Íconos --- */
+
 .navbar__icon {
   width: 26px;
   height: 26px;
+  flex: none;
   object-fit: contain;
 }
 
 .navbar__logo {
-  width: 148px;
-  max-height: 30px;
+  width: auto;
+  max-width: 148px;
+  height: 30px;
+  flex: none;
   object-fit: contain;
 }
 
-/* por defecto */
 .navbar__icon--mobile {
   display: none;
 }
 
+/* =========================================
+   Adaptación por ancho
+   Los links de texto están duplicados en el
+   drawer, así que se ocultan antes que el resto.
+   ========================================= */
 
-/* ======== MEDIA QUERY: MÓVIL ======== */
-@media (max-width: 900px) {
+/* Sin espacio para links + buscador + CTA a la vez. */
+@media (max-width: 1080px) {
   .navbar__links {
     display: none;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 860px) {
   .navbar {
-    grid-template-columns: auto 1fr auto;
-    gap: 10px;
+    gap: 8px;
   }
 
-  .navbar__a,
-  .navbar__c {
-    gap: 0.35rem;
+  .navbar__b--search {
+    max-width: 240px;
   }
+}
 
+/* El buscador se oculta; la navegación pasa por el drawer. */
+@media (max-width: 620px) {
   .navbar__b {
-    justify-self: end;
-    width: 100%;
-    max-width: 100%;
+    display: none;
   }
 
   .navbar__logo {
-    width: 122px;
+    max-width: 118px;
   }
 }
 
 @media (max-width: 480px) {
-  .navbar__b--search input {
-    padding: 9px 14px;
-    font-size: 0.9rem;
+  .navbar {
+    padding: 0 12px;
   }
 
-  .navbar__b--search button {
-    padding: 0 12px;
+  .navbar__a,
+  .navbar__c {
+    gap: 4px;
   }
 
   .navbar__icon {
@@ -205,6 +233,6 @@
   }
 
   .navbar__logo {
-    width: 104px;
+    max-width: 96px;
   }
 }
