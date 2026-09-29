@@ -32,7 +32,9 @@
   /* Layout */
   --container: 1100px;
   --container-narrow: 760px;
-  --header-h: 68px;
+  /* Alto real de la barra (navbar: 16px de padding + 30px de logo + 1px de
+     borde). El body compensa con padding-top para que nada quede debajo. */
+  --header-h: 69px;
   --gutter: 24px;
   --radius-sm: 8px;
   --radius: 12px;

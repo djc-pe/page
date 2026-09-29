@@ -43,37 +43,36 @@
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <header class="header">
-    <script src="/static/www/components/top_nav_v2/script.js" defer></script>
     <script src="/static/www/components/top_nav_v2/search.js" defer></script>
     <nav class="navbar" aria-label="Principal">
       <div class="navbar__a">
         <a href="#" class="navbar__link" data-drawer-open="mainMenu" aria-label="Abrir menú" aria-controls="mainMenu">
-          <img src="/static/www/img/menu-white.svg" alt="" class="navbar__icon" width="26" height="26">
+          <img src="/static/www/img/menu-white.svg" alt="Menu" class="navbar__icon navbar__icon--desktop">
+          <img src="/static/www/img/menu-white.svg" alt="Menu" class="navbar__icon navbar__icon--mobile">
         </a>
 
-        <a href="https://page.djc.pe/" class="navbar__link" aria-label="DJC Page — Inicio">
-          <img src="/static/www/img/logo.png" alt="DJC Page" class="navbar__logo">
+        <a href="https://www.djc.pe/" class="navbar__link">
+          <img src="/static/www/img/logo.png" alt="Home" class="navbar__logo navbar__icon--desktop">
+          <img src="/static/www/img/logo.png" alt="" class="navbar__icon navbar__icon--mobile">
         </a>
       </div>
-
       <div class="navbar__b">
-        <div class="navbar__links">
-          <a href="https://page.djc.pe/#planes" aria-current="page">Planes</a>
-          <a href="https://page.djc.pe/#como-funciona">Cómo funciona</a>
-          <a href="https://page.djc.pe/#faq">FAQ</a>
-        </div>
         <div class="navbar__b--search" role="search">
-          <input type="text" name="q" placeholder="Buscar" aria-label="Buscar" autocomplete="off">
+          <input type="text" placeholder="" aria-label="Buscar" autocomplete="off">
           <button type="button" aria-label="Ejecutar búsqueda">
-            <img src="/static/www/img/search.svg" alt="" width="18" height="18">
+            <img src="/static/www/img/search.svg" alt="Search" class="navbar__icon2">
           </button>
         </div>
       </div>
-
       <div class="navbar__c">
-        <a href="#contacto" class="btn btn--primary btn--sm">Hablemos</a>
+        <!-- <a href="#" class="navbar__link">
+          <img src="/static/www/img/car-white.svg" alt="Login" class="navbar__icon navbar__icon--desktop">
+          <img src="/static/www/img/car-white.svg" alt="Login" class="navbar__icon navbar__icon--mobile">
+        </a> -->
+
         <a href="#" class="navbar__link" data-drawer-open="userMenu" aria-label="Abrir cuenta" aria-controls="userMenu">
-          <img src="/static/www/img/user-white.svg" alt="" class="navbar__icon" width="26" height="26">
+          <img src="/static/www/img/user-white.svg" alt="User" class="navbar__icon navbar__icon--desktop">
+          <img src="/static/www/img/user-white.svg" alt="User" class="navbar__icon navbar__icon--mobile">
         </a>
       </div>
     </nav>
