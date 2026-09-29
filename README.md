@@ -40,18 +40,16 @@ Los cuatro planes tienen su página en `es/plan/<slug>/`:
 
 ## Contenido pendiente
 
-Las páginas de plan se scaffoldearon con la estructura completa, pero los
-valores comerciales son marcadores. Buscá `TODO` en `es/plan/`:
+Los precios ya están definidos (rango por diseño y realización, más hosting
+mensual y 3 meses de hosting de regalo). Quedan marcadores comerciales.
+Buscá `TODO` en `es/plan/`:
 
-- **Precio y periodicidad** — la caja `.price-box__amount` muestra `S/ 0.00`
-  (o "A cotizar" en el plan Personalizado) y `.price-box__period` pide definir
-  la vigencia.
 - **Link de checkout** — `.price-box__note` y los botones "Contratar ahora"
   apuntan a `#contacto`; hay que poner la URL real de pago.
 - **Canal de contratación** — la sección `#contacto` al final de cada página
   dice "TODO: definir el canal (formulario, correo o WhatsApp)".
 - **Especificaciones técnicas** — la tabla `.specs` tiene los valores de disco,
-  tráfico, buzones, bases de datos, recursos y frecuencia de respaldo.
+  tráfico, bases de datos, recursos, dominios y frecuencia de respaldo.
 - **FAQs de plan** — varias respuestas están marcadas como TODO.
 
 ## Desarrollo
