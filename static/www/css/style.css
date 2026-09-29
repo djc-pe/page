@@ -14,10 +14,3 @@ main.content {
 
 /* Los estilos base viven en base.css; aquí solo queda lo específico
    del layout raíz de cada plantilla. */
-
-ins.adsbygoogle {
-  display: block;
-  width: 100%;
-  min-height: 90px;
-  margin-inline: auto;
-}
