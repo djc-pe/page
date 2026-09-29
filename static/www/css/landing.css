@@ -1,0 +1,341 @@
+/* =========================================
+   Landing (index)
+   ========================================= */
+
+/* --- Hero --- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(56px, 9vw, 104px) 0 clamp(48px, 8vw, 88px);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -320px;
+  left: 50%;
+  width: 900px;
+  height: 620px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    closest-side,
+    rgba(229, 247, 116, 0.18),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: 20px;
+}
+
+.hero__lead {
+  max-width: 620px;
+  margin: 0 auto 32px;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+}
+
+.hero__note {
+  margin: 18px 0 0;
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
+}
+
+/* --- Marquee de dominios --- */
+
+.domains {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 14px;
+  margin: 0;
+  padding: 22px 0 0;
+  border-top: 1px dashed var(--color-border-subtle);
+}
+
+.domains__label {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.domains__item {
+  padding: 5px 14px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+}
+
+.domains__item--active {
+  border-color: var(--color-border);
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+/* --- Features --- */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.feature {
+  padding: 26px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--dur) var(--ease),
+              transform var(--dur) var(--ease);
+}
+
+.feature:hover {
+  border-color: var(--color-border);
+  transform: translateY(-3px);
+}
+
+.feature__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.feature h3 {
+  font-size: 1.08rem;
+  margin-bottom: 0.45em;
+}
+
+.feature p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* --- Planes --- */
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color var(--dur) var(--ease),
+              transform var(--dur) var(--ease),
+              box-shadow var(--dur) var(--ease);
+}
+
+.plan-card:hover {
+  color: inherit;
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.plan-card--featured {
+  border-color: var(--color-accent);
+  background: linear-gradient(
+    180deg,
+    var(--color-accent-soft),
+    var(--color-surface) 55%
+  );
+}
+
+.plan-card__name {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
+
+.plan-card__desc {
+  margin: 0 0 20px;
+  font-size: 0.94rem;
+}
+
+.plan-card__cta {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border-subtle);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.plan-card__cta::after {
+  content: ' →';
+  transition: transform var(--dur) var(--ease);
+  display: inline-block;
+}
+
+.plan-card:hover .plan-card__cta::after {
+  transform: translateX(4px);
+}
+
+.plans-note {
+  margin: 28px auto 0;
+  max-width: 520px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* --- Cómo funciona --- */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  counter-reset: step;
+}
+
+.step {
+  position: relative;
+  padding-top: 8px;
+}
+
+.step::before {
+  counter-increment: step;
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.step h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4em;
+}
+
+.step p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* --- FAQ --- */
+
+.faq {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq details {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color var(--dur) var(--ease);
+}
+
+.faq details[open] {
+  border-color: var(--color-border);
+}
+
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-text);
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: '+';
+  flex: none;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-accent);
+  transition: transform var(--dur) var(--ease);
+}
+
+.faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq summary:hover {
+  color: var(--color-accent);
+}
+
+.faq__body {
+  padding: 0 22px 20px;
+}
+
+.faq__body p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* --- CTA final --- */
+
+.cta {
+  padding: clamp(40px, 6vw, 64px) clamp(24px, 5vw, 56px);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  background-image: linear-gradient(
+    160deg,
+    var(--color-accent-soft),
+    transparent 60%
+  );
+}
+
+.cta h2 {
+  margin-bottom: 12px;
+}
+
+.cta p {
+  max-width: 520px;
+  margin: 0 auto 28px;
+}

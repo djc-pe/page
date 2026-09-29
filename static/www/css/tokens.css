@@ -1,0 +1,57 @@
+/* =========================================
+   Design tokens — DJC
+   ========================================= */
+
+:root {
+  /* Tipografía */
+  --font-base: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-heading: 'Poppins', var(--font-base);
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Superficies */
+  --color-bg: #000000;
+  --color-surface: #141414;
+
+  /* Texto */
+  --color-text: #ffffff;
+  --color-text-muted: #9ca3af;
+  --color-text-inverse: #ffffff;
+  --color-text-on-accent: #000000;
+
+  /* Marca */
+  --color-primary: #000000;
+  --color-accent: #e5f774;
+  --color-accent-hover: #f0ff9c;
+  --color-accent-soft: rgba(229, 247, 116, 0.12);
+
+  /* UI */
+  --color-border: rgba(229, 247, 116, 0.35);
+  --color-border-subtle: rgba(255, 255, 255, 0.10);
+  --color-focus: #e5f774;
+
+  /* Layout */
+  --container: 1100px;
+  --container-narrow: 760px;
+  /* Alto real de la barra (navbar: 16px de padding + 30px de logo + 1px de
+     borde). El body compensa con padding-top para que nada quede debajo. */
+  --header-h: 69px;
+  --gutter: 24px;
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  /* Sombras */
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-accent: 0 10px 30px rgba(229, 247, 116, 0.18);
+
+  /* Movimiento */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur: 0.25s;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter: 18px;
+  }
+}

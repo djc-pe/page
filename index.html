@@ -3,164 +3,398 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DJC Page</title>
-  
-  <link rel="canonical" href="https://www.djc.pe/">
+  <title>Page — Tu página web en minutos | DJC</title>
+  <meta name="description" content="Publica tu página web con un subdominio *.page.pe o con tu propio dominio. Hosting, SSL y soporte en español, sin conocimiento técnico.">
+  <link rel="canonical" href="https://page.djc.pe/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DJC Page">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:title" content="Page — Tu página web en minutos | DJC">
+  <meta property="og:description" content="Ten presencia en internet con tu propio dominio o con un subdominio *.page.pe.">
+  <meta property="og:url" content="https://page.djc.pe/">
+  <meta property="og:image" content="https://page.djc.pe/static/www/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#000000">
+
   <link rel="icon" type="image/png" href="/static/www/img/icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap">
+
+  <link rel="stylesheet" href="/static/www/css/tokens.css">
+  <link rel="stylesheet" href="/static/www/css/base.css">
   <link rel="stylesheet" href="/static/www/css/style.css">
-  <!-- <link rel="stylesheet" href="/static/www/css/top-nav.css"> -->
-  <link rel="stylesheet" href="/static/www/css/bottom-nav.css">
   <link rel="stylesheet" href="/static/www/css/content.css">
+  <link rel="stylesheet" href="/static/www/css/landing.css">
+  <link rel="stylesheet" href="/static/www/css/footer.css">
+  <link rel="stylesheet" href="/static/www/components/top_nav_v2/style.css">
+  <link rel="stylesheet" href="/static/www/components/top_nav_v2_menu/style.css">
   <link rel="stylesheet" href="/static/www/css/pygments.css">
   <link rel="stylesheet" href="/static/www/css/codehilite.css">
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3775900744037301" crossorigin="anonymous"></script>
-  <script src="/static/www/js/sections-1-v2.js"></script>
-  <script src="/static/www/js/sections-2.js"></script>
-
-  <style>
-  :root {
-        /* Tipografía */
-    --font-base: 'Inter', sans-serif;
-    --font-heading: 'Poppins', sans-serif;
-
-    /* Superficies */
-    --color-bg: #000000;
-    --color-surface: #141414;
-
-    /* Texto */
-    --color-text: #FFFFFF;
-    --color-text-muted: #9CA3AF;
-    --color-text-inverse: #FFFFFF;
-
-    /* Marca */
-    --color-primary: #000000;
-    --color-accent: #e5f774;
-
-    /* Variantes */
-    --color-accent-hover: #e5f774;
-    --color-accent-dark: #e5f774;
-
-    /* UI */
-    --color-border: #e5f774;
-
-  }
-  </style>
-
-  
-
-  
-
-  
+  <script src="/static/www/js/sections-1-v2.js" defer></script>
+  <script src="/static/www/js/sections-2.js" defer></script>
 </head>
 <body>
-  <header>
-    
-<link rel="stylesheet" href="/static/www/components/top_nav_v2/style.css">
-<script src="/static/www/components/top_nav_v2/script.js"></script>
-<script src="/static/www/components/top_nav_v2/search.js" defer></script>
-<nav class="navbar">
-  <div class="navbar__a">
-    <a href="#" class="navbar__link">
-      <img src="/static/www/img/menu-white.svg" alt="Menu" class="navbar__icon navbar__icon--desktop">
-      <img src="/static/www/img/menu-white.svg" alt="Menu" class="navbar__icon navbar__icon--mobile">
-    </a>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-    <a href="https://www.djc.pe/" class="navbar__link">
-      <img src="/static/www/img/logo.png" alt="Home" class="navbar__logo navbar__icon--desktop">
-      <img src="/static/www/img/logo-mobile.png" alt="Home" class="navbar__icon navbar__icon--mobile">
-    </a>
-  </div>
-  <div class="navbar__b">
-    <div class="navbar__b--search">
-      <input type="text" placeholder="">
-      <button>
-          <img src="/static/www/img/search.svg" alt="Search" class="navbar__icon2">
-      </button>
-    </div>
-  </div>
-  <div class="navbar__c">
-    <!-- <a href="#" class="navbar__link">
-      <img src="/static/www/img/car-white.svg" alt="Login" class="navbar__icon navbar__icon--desktop">
-      <img src="/static/www/img/car-white.svg" alt="Login" class="navbar__icon navbar__icon--mobile">
-    </a> -->
+  <header class="header">
+    <script src="/static/www/components/top_nav_v2/search.js" defer></script>
+    <nav class="navbar" aria-label="Principal">
+      <div class="navbar__a">
+        <a href="#" class="navbar__link" data-drawer-open="mainMenu" aria-label="Abrir menú" aria-controls="mainMenu">
+          <img src="/static/www/img/menu-white.svg" alt="Menu" class="navbar__icon navbar__icon--desktop">
+          <img src="/static/www/img/menu-white.svg" alt="Menu" class="navbar__icon navbar__icon--mobile">
+        </a>
 
-    <a href="#" class="navbar__link">
-      <img src="/static/www/img/user-white.svg" alt="User" class="navbar__icon navbar__icon--desktop">
-      <img src="/static/www/img/user-white.svg" alt="User" class="navbar__icon navbar__icon--mobile">
-    </a>
-  </div>
-</nav>
-    
-<link rel="stylesheet" href="/static/www/components/top_nav_v2_menu/style.css">
-<script src="/static/www/components/top_nav_v2_menu/script.js"></script>
-<div class="drawer-overlay" id="drawerOverlay">
-  <aside class="drawer" data-side="left" id="mainMenu">
-    <div class="drawer-header">
-      <!-- <img src="/img/logo-1.png" alt="Davenco"> -->
-      <span>DJC</span>
-      <button class="drawer-close">✕</button>
-    </div>
-    <nav class="drawer-menu">
-      <a href="https://www.djc.pe/">Inicio</a>
-      <!-- <a href="https://g1.djc.pe/">G1</a> -->
-      <a href="https://page.djc.pe/">Page</a>
-      <a href="https://story.djc.pe/">Story</a>
-      <a href="https://tutorial.djc.pe/">Tutorial</a>
-      <hr>
+        <a href="https://www.djc.pe/" class="navbar__link">
+          <img src="/static/www/img/logo.png" alt="Home" class="navbar__logo navbar__icon--desktop">
+          <img src="/static/www/img/logo.png" alt="" class="navbar__icon navbar__icon--mobile">
+        </a>
+      </div>
+      <div class="navbar__b">
+        <div class="navbar__b--search" role="search">
+          <input type="text" placeholder="" aria-label="Buscar" autocomplete="off">
+          <button type="button" aria-label="Ejecutar búsqueda">
+            <img src="/static/www/img/search.svg" alt="Search" class="navbar__icon2">
+          </button>
+        </div>
+      </div>
+      <div class="navbar__c">
+        <!-- <a href="#" class="navbar__link">
+          <img src="/static/www/img/car-white.svg" alt="Login" class="navbar__icon navbar__icon--desktop">
+          <img src="/static/www/img/car-white.svg" alt="Login" class="navbar__icon navbar__icon--mobile">
+        </a> -->
+
+        <a href="#" class="navbar__link" data-drawer-open="userMenu" aria-label="Abrir cuenta" aria-controls="userMenu">
+          <img src="/static/www/img/user-white.svg" alt="User" class="navbar__icon navbar__icon--desktop">
+          <img src="/static/www/img/user-white.svg" alt="User" class="navbar__icon navbar__icon--mobile">
+        </a>
+      </div>
     </nav>
-  </aside>
+    <script src="/static/www/components/top_nav_v2_menu/script.js"></script>
+    <div class="drawer-overlay" id="drawerOverlay">
+      <aside class="drawer" data-side="left" id="mainMenu" aria-label="Menú principal">
+        <div class="drawer-header">
+          <span>DJC</span>
+          <button class="drawer-close" type="button" aria-label="Cerrar menú">&#10005;</button>
+        </div>
+        <nav class="drawer-menu" aria-label="Navegación principal">
+          <a href="https://www.djc.pe/">Inicio</a>
+          <a href="https://page.djc.pe/">Page</a>
+          <a href="https://story.djc.pe/">Story</a>
+          <a href="https://tutorial.djc.pe/">Tutorial</a>
+          <hr>
+          <a href="#planes">Planes</a>
+          <a href="#faq">Preguntas frecuentes</a>
+        </nav>
+      </aside>
 
-  <aside class="drawer" data-side="right" id="userMenu">
-    <div class="drawer-header">
-      <span>Mi cuenta</span>
-      <button class="drawer-close">✕</button>
+      <aside class="drawer" data-side="right" id="userMenu" aria-label="Mi cuenta">
+        <div class="drawer-header">
+          <span>Mi cuenta</span>
+          <button class="drawer-close" type="button" aria-label="Cerrar menú">&#10005;</button>
+        </div>
+        <nav class="drawer-menu" aria-label="Navegación de cuenta">
+          <a href="#">Iniciar sesión</a>
+          <a href="#">Registrarse</a>
+          <hr>
+          <a href="#planes">Ver planes</a>
+        </nav>
+      </aside>
     </div>
-    <nav class="drawer-menu">
-      <a href="#">Iniciar sesión</a>
-      <a href="#">Registrarse</a>
-      <hr>
-    </nav>
-  </aside>
-</div>
   </header>
 
-  <main class="content">
-    
-<h1 style="font-size:26px; margin-bottom:4px;">DJC Page</h1>
-<p style="color:var(--color-text-muted); font-size:15px; margin-top:0;">Ten presencia en internet con nosotros.</p>
+  <main class="content" id="contenido">
 
-<h2 style="font-size:20px;">Planes</h2>
-<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:16px;">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__inner">
+          <span class="badge">Hosting web en español</span>
+          <h1>Tu página web, publicada en minutos</h1>
+          <p class="hero__lead">
+            Escribe, publica y listo. Te damos el hosting, el SSL y el dominio
+            para que aparezcas en internet sin depender de un técnico.
+          </p>
+          <div class="btn-row btn-row--center">
+            <a class="btn btn--primary" href="#planes">Ver planes</a>
+            <a class="btn btn--ghost" href="#como-funciona">Cómo funciona</a>
+          </div>
+          <p class="hero__note">
+            Incluye dominio <code>*.page.pe</code> en todos los planes. Sin permanencia.
+          </p>
+        </div>
 
-  <a href="/es/plan/basico/"
-     style="display:block; text-decoration:none; padding:16px; border:1px solid var(--color-border); border-radius:10px; background:var(--color-surface); color:var(--color-text);">
-    <h2 style="margin:0 0 8px; font-size:18px; color:var(--color-accent);">Básico</h2>
-    <p style="margin:0; color:var(--color-text-muted); font-size:14px;">Algo mas dominio *.page.pe</p>
-  </a>
+        <ul class="domains">
+          <li class="domains__label">Tus dominios incluidos</li>
+          <li class="domains__item domains__item--active">tuempresa.page.pe</li>
+          <li class="domains__item domains__item--active">tuempresa.page.pe</li>
+          <li class="domains__item domains__item--active">tuempresa.page.pe</li>
+          <li class="domains__item">tudominio.com</li>
+          <li class="domains__item">tudominio.pe</li>
+        </ul>
+      </div>
+    </section>
 
-  <a href="/es/plan/profesional/"
-     style="display:block; text-decoration:none; padding:16px; border:1px solid var(--color-border); border-radius:10px; background:var(--color-surface); color:var(--color-text);">
-    <h2 style="margin:0 0 8px; font-size:18px; color:var(--color-accent);">Profesional</h2>
-    <p style="margin:0; color:var(--color-text-muted); font-size:14px;">Todo lo de Básico más dominio personalizado</p>
-  </a>
+    <!-- ============ FEATURES ============ -->
+    <section class="section section--alt" id="que-incluye">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Qué incluye</span>
+          <h2>Todo lo que necesitas para estar en línea</h2>
+          <p>Sin paneles rara vez usados ni letra chica. Un hosting pensado para publicar y mantener tu web.</p>
+        </div>
 
-  <a href="/es/plan/premium/"
-     style="display:block; text-decoration:none; padding:16px; border:1px solid var(--color-border); border-radius:10px; background:var(--color-surface); color:var(--color-text);">
-    <h2 style="margin:0 0 8px; font-size:18px; color:var(--color-accent);">Premium</h2>
-    <p style="margin:0; color:var(--color-text-muted); font-size:14px;">Todo lo de Profesional más ...</p>
-  </a>
+        <div class="features">
+          <article class="feature">
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M7 21h10"/>
+              </svg>
+            </div>
+            <h3>Dominio y subdominio incluidos</h3>
+            <p>Publica en tu subdominio <code>*.page.pe</code> desde el primer día, o conecta tu propio dominio cuando quieras.</p>
+          </article>
 
-  <a href="/es/plan/personalizado/"
-     style="display:block; text-decoration:none; padding:16px; border:1px solid var(--color-border); border-radius:10px; background:var(--color-surface); color:var(--color-text);">
-    <h2 style="margin:0 0 8px; font-size:18px; color:var(--color-accent);">Personalizado</h2>
-    <p style="margin:0; color:var(--color-text-muted); font-size:14px;">Diseñamos a medida</p>
-  </a>
+          <article class="feature">
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/><path d="M9.5 12l2 2 3.5-4"/>
+              </svg>
+            </div>
+            <h3>SSL gratis siempre</h3>
+            <p>Certificado emitido y renovado automáticamente en todos los planes. Tu sitio aparece con el candado desde el primer día.</p>
+          </article>
 
+          <article class="feature">
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L4.5 13H11l-1 9 8.5-11H12l1-9z"/>
+              </svg>
+            </div>
+            <h3>CDN y caché global</h3>
+            <p>Tu contenido se sirve desde servidores cercanos para que cargue rápido, estés donde estés.</p>
+          </article>
 
-</div>
+          <article class="feature">
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/>
+              </svg>
+            </div>
+            <h3>Correo institucional</h3>
+            <p>Buzones con tu propia dirección, antispam y reenvío, sin pagar un extra aparte.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+              </svg>
+            </div>
+            <h3>Copias de seguridad</h3>
+            <p>Respaldos automáticos periódicos, con restauración en un clic desde el panel.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <h3>Soporte que habla español</h3>
+            <p>Te responde una persona, no un bot. Respondemos por correo y chat en horario laboral.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLANES ============ -->
+    <section class="section" id="planes">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Planes</span>
+          <h2>Elige el plan que encaja contigo hoy</h2>
+          <p>Todos incluyen SSL, copias de seguridad y soporte en español. Puedes cambiar de plan cuando quieras.</p>
+        </div>
+
+        <div class="plans">
+          <a class="plan-card" href="/es/plan/basico/">
+            <h3 class="plan-card__name">Básico</h3>
+            <p class="plan-card__desc">Para empezar a tener presencia en internet con un subdominio <code>*.page.pe</code>.</p>
+            <span class="plan-card__cta">Ver plan</span>
+          </a>
+
+          <a class="plan-card plan-card--featured" href="/es/plan/profesional/">
+            <span class="badge">Más elegido</span>
+            <h3 class="plan-card__name">Profesional</h3>
+            <p class="plan-card__desc">Todo lo de Básico más tu propio dominio y correo a tu nombre.</p>
+            <span class="plan-card__cta">Ver plan</span>
+          </a>
+
+          <a class="plan-card" href="/es/plan/premium/">
+            <h3 class="plan-card__name">Premium</h3>
+            <p class="plan-card__desc">Todo lo de Profesional, con más recursos y prioridad de soporte.</p>
+            <span class="plan-card__cta">Ver plan</span>
+          </a>
+
+          <a class="plan-card" href="/es/plan/personalizado/">
+            <h3 class="plan-card__name">Personalizado</h3>
+            <p class="plan-card__desc">Lo que tu proyecto necesita: lo diseñamos a medida contigo.</p>
+            <span class="plan-card__cta">Ver plan</span>
+          </a>
+        </div>
+
+        <p class="plans-note">
+          Los precios se muestran en la página de cada plan.
+          <a href="#faq">Resolvemos tus dudas</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CÓMO FUNCIONA ============ -->
+    <section class="section section--alt" id="como-funciona">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Cómo funciona</span>
+          <h2>Tres pasos y estás en internet</h2>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <h3>Elige tu plan</h3>
+            <p>Contrata el que corresponda y recibe el acceso a tu panel de inmediato.</p>
+          </article>
+          <article class="step">
+            <h3>Publica tu contenido</h3>
+            <p>Sube tus archivos o conecta tu contenido con el editor visual, sin tocar código.</p>
+          </article>
+          <article class="step">
+            <h3>Comparte tu link</h3>
+            <p>Tu página queda online con SSL activo. Ya puedes compartirla donde quieras.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq" data-no-ad>
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>Preguntas frecuentes</h2>
+        </div>
+
+        <div class="faq">
+          <details open>
+            <summary>¿Necesito saber de programación?</summary>
+            <div class="faq__body">
+              <p>No. El panel incluye un editor visual para escribir tus textos y subir tus imágenes. Si traes tu web ya hecha, solo la subes por FTP.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>¿Puedo usar mi propio dominio?</summary>
+            <div class="faq__body">
+              <p>Sí, desde el plan Profesional. Te ayudamos a apuntar tus registros DNS y configuramos el dominio gratis.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>¿Qué pasa si supero el espacio o el tráfico del plan?</summary>
+            <div class="faq__body">
+              <p>Te avisamos por correo antes de que se agote y puedes subir de plan en cualquier momento, sin volver a migrar nada.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>¿Hay permanencia o cancelación anticipada?</summary>
+            <div class="faq__body">
+              <p>No hay permanencia. Puedes cancelar cuando quieras y tu contenido queda disponible para descargar durante 30 días.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>¿Emiten factura?</summary>
+            <div class="faq__body">
+              <p>Sí, emitimos factura con IGV. Para facturación corporativa, la gestionamos a través de Story.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section section--tight" data-no-ad>
+      <div class="container">
+        <div class="cta">
+          <h2>¿Listo para publicar?</h2>
+          <p>Elige un plan y en pocos minutos tu página estará online. Si tienes dudas, escríbenos y te orientamos.</p>
+          <div class="btn-row btn-row--center">
+            <a class="btn btn--primary" href="#planes">Ver planes</a>
+            <a class="btn btn--ghost" href="https://www.djc.pe/">Hablar con DJC</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="/static/www/img/logo.png" alt="DJC Page" width="150" height="31">
+          <p class="footer__tagline">Tu página web publicada en internet, sin complicaciones.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Productos</h4>
+          <ul>
+            <li><a href="https://page.djc.pe/">Page</a></li>
+            <li><a href="https://story.djc.pe/">Story</a></li>
+            <li><a href="https://tutorial.djc.pe/">Tutorial</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Planes</h4>
+          <ul>
+            <li><a href="/es/plan/basico/">Básico</a></li>
+            <li><a href="/es/plan/profesional/">Profesional</a></li>
+            <li><a href="/es/plan/premium/">Premium</a></li>
+            <li><a href="/es/plan/personalizado/">Personalizado</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Ayuda</h4>
+          <ul>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+            <li><a href="#como-funciona">Cómo funciona</a></li>
+            <li><a href="#planes">Todos los precios</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="year">2026</span> DJC. Todos los derechos reservados.</p>
+        <nav class="footer__legal" aria-label="Enlaces legales">
+          <a href="#">Términos</a>
+          <a href="#">Privacidad</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>

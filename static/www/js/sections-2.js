@@ -1,38 +1,62 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('div.section');
+/* Anuncios intercalados entre secciones de contenido largo.
+   Regla: un anuncio cada CHAR_SPACE caracteres de texto, saltando secciones
+   cortas y la última (para no dejar un anuncio pegado al footer). */
+(function () {
+  var CLIENT = 'ca-pub-3775900744037301';
+  var SLOT = '8296560475';
+  var CHAR_SPACE = 2200;
+  var MIN_SECTION_CHARS = 600;
 
-  let charCount = 0;
-  const charSpace = 1000;
+  function buildAd() {
+    var ins = document.createElement('ins');
+    ins.className = 'adsbygoogle';
+    ins.style.display = 'block';
+    ins.setAttribute('data-ad-client', CLIENT);
+    ins.setAttribute('data-ad-slot', SLOT);
+    ins.setAttribute('data-ad-format', 'auto');
+    ins.setAttribute('data-full-width-responsive', 'true');
+    return ins;
+  }
 
-  sections.forEach((section) => {
-    const text = section.textContent || '';
-    charCount += text.trim().length;
+  function init() {
+    var sections = Array.prototype.slice.call(
+      document.querySelectorAll('main .section:not([data-no-ad])')
+    );
+    if (sections.length < 2) return;
 
-    console.log('chars acumulados:', charCount);
+    var budget = sections.length - 1;
+    var sinceLastAd = 0;
 
-    if (charCount >= charSpace) {
-      const ad = document.createElement('ins');
-      ad.className = 'adsbygoogle';
-      ad.style.display = 'block';
-      ad.setAttribute("data-ad-client", "ca-pub-3775900744037301");
-      ad.setAttribute("data-ad-slot", "8296560475");
-      ad.setAttribute("data-ad-format", "auto");
-      ad.setAttribute("data-full-width-responsive", "true");
-      
-      const newDiv = document.createElement('div');
-      newDiv.className = 'new';
-      newDiv.appendChild(ad);
+    sections.forEach(function (section, i) {
+      if (i >= budget) return;
+      if (section.querySelector('[data-ad]')) return;
 
-      section.insertAdjacentElement('afterend', newDiv);
+      var chars = (section.textContent || '').trim().length;
+      if (chars < MIN_SECTION_CHARS) return;
 
-      try {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      } catch (e) {
-        console.error('Error cargando anuncio:', e);
-      }
+      sinceLastAd += chars;
+      if (sinceLastAd < CHAR_SPACE) return;
 
-      // Reiniciar contador
-      charCount = 0;
+      var wrap = document.createElement('div');
+      wrap.dataset.ad = 'inline';
+      wrap.className = 'container';
+      wrap.style.paddingBlock = '8px';
+      wrap.appendChild(buildAd());
+      section.insertAdjacentElement('afterend', wrap);
+
+      sinceLastAd = 0;
+    });
+
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.error('[ads] error al registrar anuncios intercalados', err);
     }
-  });
-});
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

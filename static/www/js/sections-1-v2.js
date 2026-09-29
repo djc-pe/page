@@ -1,36 +1,44 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const probability = 0.5;
-  let value = Math.random();
-  console.log('probability', probability)
-  console.log('value', value)
+/* Anuncio bajo el header. Se renderiza con una probabilidad para no
+   saturar al usuario en la primera visita. */
+(function () {
+  var CLIENT = 'ca-pub-3775900744037301';
+  var SLOT = '7314651297';
+  var PROBABILITY = 0.5;
 
-  if (value > probability) {
-    return;
+  function buildAd() {
+    var ins = document.createElement('ins');
+    ins.className = 'adsbygoogle';
+    ins.style.display = 'block';
+    ins.setAttribute('data-ad-client', CLIENT);
+    ins.setAttribute('data-ad-slot', SLOT);
+    ins.setAttribute('data-ad-format', 'auto');
+    ins.setAttribute('data-full-width-responsive', 'true');
+    return ins;
   }
 
-  const firstSection = document.querySelector('main.content');
-  console.log('firstsection-1(as)')
-  console.log('firstsection-2', firstSection)
+  function init() {
+    var main = document.querySelector('main.content') || document.querySelector('main');
+    if (!main) return;
+    if (document.querySelector('div[data-ad="top"]')) return;
+    if (Math.random() > PROBABILITY) return;
 
-  if (firstSection && !document.querySelector('div.new')) {
-    console.log('firstsection-3')
+    var wrap = document.createElement('div');
+    wrap.dataset.ad = 'top';
+    wrap.style.marginBottom = '24px';
+    wrap.appendChild(buildAd());
 
-    const ad = document.createElement("ins");
-    ad.className = "adsbygoogle";
-    ad.style.display = "block";
-    ad.setAttribute("data-ad-client", "ca-pub-3775900744037301");
-    ad.setAttribute("data-ad-slot", "7314651297");
-    ad.setAttribute("data-ad-format", "auto");
-    ad.setAttribute("data-full-width-responsive", "true");
+    main.prepend(wrap);
 
-    const newDiv = document.createElement('div');
-    newDiv.className = 'new';
-    newDiv.appendChild(ad)
-
-    // firstSection.parentNode.insertBefore(newDiv, firstSection);
-    firstSection.prepend(newDiv);
-
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    console.log('firstsection-4')
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.error('[ads] no se pudo cargar el anuncio superior', err);
+    }
   }
-});
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
