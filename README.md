@@ -21,8 +21,6 @@ static/www/css/             Hojas de estilos
   footer.css                Pie de página
   pygments.css              Resaltado de código (traído de Pygments)
   codehilite.css            Resaltado de código (traído de Pygments)
-static/www/js/
-  listen.js                 Botón "Escuchar" (speechSynthesis) en páginas de plan
 static/www/components/
   top_nav_v2/               Barra de navegación + búsqueda
   top_nav_v2_menu/          Drawers lateral y de cuenta
