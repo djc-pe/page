@@ -1,19 +1,35 @@
 const header = document.querySelector('.header');
-let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+const nav = document.querySelector('.navbar');
 
-// Inicializamos el header visible al cargar
-header.style.transform = 'translateY(0)';
+/* El header se oculta al bajar y vuelve al subir. */
+let lastScroll = window.scrollY;
+let ticking = false;
 
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+function onScroll() {
+  const current = window.scrollY;
 
-  if (currentScroll > lastScroll && currentScroll > 50) {
-    // Scroll hacia abajo -> ocultar header
-    header.style.transform = 'translateY(-100%)';
+  if (current > lastScroll && current > 80) {
+    header.classList.add('header--hidden');
   } else {
-    // Scroll hacia arriba -> mostrar header
-    header.style.transform = 'translateY(0)';
+    header.classList.remove('header--hidden');
   }
 
-  lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+  lastScroll = Math.max(current, 0);
+  ticking = false;
+}
+
+window.addEventListener(
+  'scroll',
+  function () {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(onScroll);
+  },
+  { passive: true }
+);
+
+nav?.addEventListener('focusout', function (e) {
+  if (!header.contains(e.relatedTarget)) {
+    header.classList.remove('header--hidden');
+  }
 });

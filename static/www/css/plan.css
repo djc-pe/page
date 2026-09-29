@@ -1,0 +1,352 @@
+/* =========================================
+   Página de plan (/es/plan/<slug>/)
+   ========================================= */
+
+/* --- Breadcrumb --- */
+
+.breadcrumb {
+  padding: 20px 0 0;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.breadcrumb li + li::before {
+  content: '/';
+  margin-right: 8px;
+  color: var(--color-border);
+}
+
+.breadcrumb a {
+  color: var(--color-text-muted);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-accent);
+}
+
+.breadcrumb [aria-current='page'] {
+  color: var(--color-text);
+}
+
+/* --- Hero del plan --- */
+
+.plan-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(32px, 5vw, 56px) 0 clamp(40px, 6vw, 64px);
+}
+
+.plan-hero::before {
+  content: '';
+  position: absolute;
+  top: -280px;
+  left: 50%;
+  width: 760px;
+  height: 520px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    closest-side,
+    rgba(229, 247, 116, 0.15),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.plan-hero__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: clamp(28px, 4vw, 48px);
+  align-items: start;
+}
+
+.plan-hero h1 {
+  font-size: clamp(2rem, 4.4vw, 2.9rem);
+  margin-bottom: 14px;
+}
+
+.plan-hero__lead {
+  font-size: 1.1rem;
+  max-width: 46ch;
+  margin-bottom: 0;
+}
+
+/* --- Caja de precio --- */
+
+.price-box {
+  position: sticky;
+  top: calc(var(--header-h, 68px) + 20px);
+  padding: 26px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  background-image: linear-gradient(
+    180deg,
+    var(--color-accent-soft),
+    var(--color-surface) 60%
+  );
+}
+
+.price-box__label {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.price-box__amount {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0 0 4px;
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.price-box__amount sup {
+  font-size: 1rem;
+  font-weight: 500;
+  top: -0.9em;
+}
+
+.price-box__period {
+  margin: 0 0 20px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.price-box__note {
+  margin: 14px 0 0;
+  font-size: 0.82rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.price-box__meta {
+  margin: 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--color-border-subtle);
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
+}
+
+/* --- Resumen de inclusiones --- */
+
+.includes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin: 0;
+}
+
+.include {
+  padding: 20px 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius);
+}
+
+.include h3 {
+  font-size: 0.98rem;
+  margin-bottom: 0.4em;
+}
+
+.include p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+/* --- Lista con check --- */
+
+.checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px 28px;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text);
+  font-size: 0.96rem;
+}
+
+.checklist li::before {
+  content: '✓';
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--color-accent-soft);
+  border: 1px solid var(--color-border);
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.checklist--muted li {
+  color: var(--color-text-muted);
+}
+
+.checklist--muted li::before {
+  content: '–';
+  background: transparent;
+  border-color: var(--color-border-subtle);
+  color: var(--color-text-muted);
+}
+
+/* --- Specs --- */
+
+.specs {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-size: 0.94rem;
+}
+
+.specs caption {
+  padding-bottom: 12px;
+  text-align: left;
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.specs th,
+.specs td {
+  padding: 13px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-subtle);
+  background: var(--color-surface);
+}
+
+.specs th {
+  width: 44%;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.specs td {
+  color: var(--color-text-muted);
+}
+
+.specs tbody tr:last-child th,
+.specs tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* --- Ideal para --- */
+
+.ideal {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ideal p {
+  font-size: 1.05rem;
+}
+
+/* --- Otros planes --- */
+
+.related {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.related a {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color var(--dur) var(--ease),
+              transform var(--dur) var(--ease);
+}
+
+.related a:hover {
+  color: inherit;
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.related strong {
+  color: var(--color-accent);
+  font-size: 1.02rem;
+}
+
+.related span {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 860px) {
+  .plan-hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .price-box {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .specs,
+  .specs tbody,
+  .specs tr,
+  .specs th,
+  .specs td {
+    display: block;
+    width: auto;
+  }
+
+  .specs tr {
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .specs tr:last-child {
+    border-bottom: none;
+  }
+
+  .specs th,
+  .specs td {
+    border-bottom: none;
+    padding: 6px 18px;
+  }
+
+  .specs th {
+    padding-top: 14px;
+  }
+
+  .specs td {
+    padding-bottom: 14px;
+  }
+}

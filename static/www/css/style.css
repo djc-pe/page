@@ -1,8 +1,23 @@
+/* =========================================
+   Capa global de la página
+   ========================================= */
+
 body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: var(--color-bg);
-  color: var(--color-text);
-  padding-top: 60px;
-  padding-bottom: 70px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.content {
+  flex: 1 0 auto;
+}
+
+/* Los estilos base viven en base.css; aquí solo queda lo específico
+   del layout raíz de cada plantilla. */
+
+ins.adsbygoogle {
+  display: block;
+  width: 100%;
+  min-height: 90px;
+  margin-inline: auto;
 }
