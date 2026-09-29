@@ -185,6 +185,25 @@
   font-size: 0.94rem;
 }
 
+.plan-card__price {
+  margin: 0 0 18px;
+}
+
+.plan-card__amount {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.plan-card__hosting {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
 .plan-card__cta {
   margin-top: auto;
   padding-top: 20px;
