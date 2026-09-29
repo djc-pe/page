@@ -22,8 +22,6 @@ static/www/css/             Hojas de estilos
   pygments.css              Resaltado de código (traído de Pygments)
   codehilite.css            Resaltado de código (traído de Pygments)
 static/www/js/
-  sections-1-v2.js          Anuncio AdSense bajo el header (50% de probabilidad)
-  sections-2.js             Anuncios intercalados entre secciones largas
   listen.js                 Botón "Escuchar" (speechSynthesis) en páginas de plan
 static/www/components/
   top_nav_v2/               Barra de navegación + búsqueda
