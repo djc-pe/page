@@ -1,6 +1,6 @@
 # DJC Page
 
-Sitio de `https://page.djc.pe` — landing de venta de páginas web para negocios.
+Sitio de `https://page.djc.pe` - landing de venta de páginas web para negocios.
 Estático: HTML + CSS + JS vanilla, sin build ni dependencias. Se despliega
 sirviendo la raíz del repositorio.
 
@@ -69,14 +69,14 @@ en el sitio.**
 Lo que sí hay que revisar antes de publicar, porque son datos internos que el
 copy evita a propósito:
 
-- **Tabla `.specs`** — se describen en términos de lo que el cliente recibe
+- **Tabla `.specs`** - se describen en términos de lo que el cliente recibe
   (páginas, contenido, contacto), no en GB, MB de CPU ni tráfico. Si DJC quiere
   publicar límites reales, hay que agregarlos.
-- **Precios de dominio** — el registro y la renovación anual del `.com` se
+- **Precios de dominio** - el registro y la renovación anual del `.com` se
   cotizan aparte, pero el monto exacto no está escrito en ninguna parte.
-- **"Sin permanencia"** — es la política actual del hosting. Conviene
+- **"Sin permanencia"** - es la política actual del hosting. Conviene
   confirmarla antes de subir a producción.
-- **Términos y privacidad** — los enlaces del footer apuntan a `#`.
+- **Términos y privacidad** - los enlaces del footer apuntan a `#`.
 
 ## Contacto
 
