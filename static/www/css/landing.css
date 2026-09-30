@@ -230,6 +230,195 @@
   font-size: 0.9rem;
 }
 
+/* --- Ejemplos de webs --- */
+
+.showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+  gap: 24px;
+}
+
+.showcase__item {
+  /* La tarjeta se adapta al ancho que le toque en el grid, sin depender
+     de media queries del viewport. */
+  container-type: inline-size;
+  display: flex;
+}
+
+.showcase__card {
+  display: grid;
+  flex: 1;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--dur) var(--ease),
+              transform var(--dur) var(--ease),
+              box-shadow var(--dur) var(--ease);
+}
+
+.showcase__card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.showcase__preview {
+  position: relative;
+  display: block;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+/* Barra estilo navegador: deja claro que lo de abajo es una web real */
+.showcase__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.showcase__dot {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-border-subtle);
+}
+
+.showcase__url {
+  margin-left: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.showcase__shotwrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: #0b0b0b;
+}
+
+.showcase__shot {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform var(--dur) var(--ease);
+}
+
+.showcase__card:hover .showcase__shot {
+  transform: scale(1.03);
+}
+
+.showcase__overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+}
+
+.showcase__preview:hover .showcase__overlay,
+.showcase__preview:focus-visible .showcase__overlay {
+  opacity: 1;
+}
+
+.showcase__cta {
+  padding: 11px 24px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+  font-weight: 600;
+}
+
+.showcase__body {
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+}
+
+.showcase__kind {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.showcase__name {
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+  color: var(--color-text);
+}
+
+.showcase__body p {
+  margin: 0 0 18px;
+  font-size: 0.95rem;
+}
+
+.showcase__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 20px;
+}
+
+.showcase__list li {
+  padding: 6px 12px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.showcase__note {
+  margin: auto 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border-subtle);
+  font-size: 0.82rem;
+}
+
+/* Cuando la tarjeta es ancha, la captura y el texto van en columnas */
+@container (min-width: 700px) {
+  .showcase__card {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+
+  .showcase__preview {
+    border-bottom: none;
+    border-right: 1px solid var(--color-border-subtle);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .showcase__shotwrap {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+  }
+
+  /* Se estira con flex (no con height:100%, que no resolveria aqui)
+     y object-fit recorta para cubrir la caja. */
+  .showcase__shot {
+    flex: 1 1 auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    object-fit: cover;
+  }
+}
+
 /* --- Cómo funciona --- */
 
 .steps {
