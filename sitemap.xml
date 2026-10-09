@@ -6,7 +6,32 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://page.djc.pe/es/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://page.djc.pe/en/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://page.djc.pe/zh-cn/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://page.djc.pe/es/plan/basico/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://page.djc.pe/en/plan/basico/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://page.djc.pe/zh-cn/plan/basico/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -16,12 +41,42 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://page.djc.pe/en/plan/profesional/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://page.djc.pe/zh-cn/plan/profesional/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://page.djc.pe/es/plan/premium/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://page.djc.pe/en/plan/premium/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://page.djc.pe/zh-cn/plan/premium/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://page.djc.pe/es/plan/personalizado/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://page.djc.pe/en/plan/personalizado/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://page.djc.pe/zh-cn/plan/personalizado/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
